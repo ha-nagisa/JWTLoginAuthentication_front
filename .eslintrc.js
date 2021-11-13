@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 module.exports = {
   root: true,
   env: {
@@ -8,10 +9,16 @@ module.exports = {
     parser: '@babel/eslint-parser',
     requireConfigFile: false,
   },
-  extends: ['@nuxtjs', 'plugin:nuxt/recommended'],
+  extends: [
+    '@nuxtjs',
+    'plugin:nuxt/recommended',
+    'prettier',
+    'prettier/vue',
+    'plugin:nuxt/recommended',
+  ],
   plugins: [],
   rules: {
-    commaDangle: false,
-    spaceBeforeFunctionParen: false,
+    commaDangle: 0,
+    spaceBeforeFunctionParen: 0,
   },
 }

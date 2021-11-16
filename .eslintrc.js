@@ -5,5 +5,5 @@ module.exports = {
   parserOptions: { parser: '@babel/eslint-parser', requireConfigFile: false },
   extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier', 'plugin:nuxt/recommended'],
   plugins: [],
-  rules: { commaDangle: 0, spaceBeforeFunctionParen: 0 },
+  rules: { commaDangle: 0, spaceBeforeFunctionParen: 0, 'vue/valid-v-slot': 'off' },
 }

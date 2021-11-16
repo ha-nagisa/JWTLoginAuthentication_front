@@ -1,9 +1,7 @@
 <template>
   <v-app-bar app :dark="!isScrollPoint" :height="homeAppBarHeight" :color="toolbarStyle.color" :elevation="toolbarStyle.elevation">
     <app-logo @click.native="$vuetify.goTo('#scroll-top')" />
-    <v-toolbar-title class="hidden-mobile-and-down">
-      {{ appName }}
-    </v-toolbar-title>
+    <app-title class="hidden-mobile-and-down" />
 
     <v-spacer />
 
@@ -45,9 +43,8 @@ export default {
       default: 0,
     },
   },
-  data({ $config: { appName }, $store }) {
+  data({ $store }) {
     return {
-      appName,
       scrollY: 0,
       homeAppBarHeight: $store.state.styles.homeAppBarHeight,
     }

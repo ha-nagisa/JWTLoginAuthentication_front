@@ -1,5 +1,5 @@
 <template>
-  <v-text-field v-model="setEmail" label="メールアドレスを入力" placeholder="your@email.com" outlined />
+  <v-text-field v-model="setEmail" :rules="rules" label="メールアドレスを入力" :placeholder="placeholder ? 'your@email.com' : undifined" outlined />
 </template>
 
 <script>
@@ -9,6 +9,15 @@ export default {
       type: String,
       default: '',
     },
+    placeholder: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      rules: [(v) => !!v || '', (v) => /.+@.+\..+/.test(v) || ''],
+    }
   },
   computed: {
     setEmail: {
